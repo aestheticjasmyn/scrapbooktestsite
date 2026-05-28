@@ -1,6 +1,5 @@
 // 1. GATE CONTROL SYSTEM (Password Safe)
-// Change 'cyberjasmyn2026' to whatever personal key code you choose.
-const GATE_KEY = "cyberjasmyn2026"; 
+const GATE_KEY = "*Red98ivy*"; 
 
 function unlockArchive() {
     const enteredPass = document.getElementById('gate-pass').value;
