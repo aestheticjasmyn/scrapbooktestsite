@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --bg-dark: #0a0a0a;
+    --card-bg: #121212;
+    --neon-orange: #ff6b35;
+    --cyber-white: #e0e0e0;
+    --wireframe-gray: #2a2a2a;
+    --sigil-font: 'Orbitron', sans-serif;
+    --mono-font: 'Share Tech Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--cyber-white);
+    font-family: var(--mono-font);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Background Cyber Grid Overlay */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(42, 42, 42, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(42, 42, 42, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- GATEKEEPER / LOGIN PAGE STYLES --- */
+.gatekeeper-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    position: relative;
+    z-index: 2;
+    background: var(--card-bg);
+    border: 2px solid var(--neon-orange);
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+.cyber-sigil-header {
+    font-family: var(--sigil-font);
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--neon-orange);
+    margin-bottom: 5px;
+}
+
+.sparkle {
+    color: var(--cyber-white);
+    text-shadow: 0 0 8px #fff;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#access-pass {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    font-family: var(--mono-font);
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.input-line {
+    height: 1px;
+    background: #444;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+#access-pass:focus + .input-line {
+    background: var(--neon-orange);
+}
+
+.glitch-btn {
+    background: transparent;
+    border: 1px solid var(--cyber-white);
+    color: var(--cyber-white);
+    padding: 10px 25px;
+    cursor: pointer;
+    font-family: var(--sigil-font);
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.glitch-btn:hover {
+    background: var(--neon-orange);
+    color: var(--bg-dark);
+    border-color: var(--neon-orange);
+    box-shadow: 0 0 15px var(--neon-orange);
+}
+
+#error-msg {
+    color: #ff3333;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.hidden { display: none; }
+
+/* --- DASHBOARD HUB STYLES --- */
+.dashboard-body {
+    padding-top: 80px;
+}
+
+.archive-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--wireframe-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.nav-link {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-family: var(--sigil-font);
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: var(--neon-orange);
+    border-bottom: 2px solid var(--neon-orange);
+}
+
+.poster-viewport {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 2;
+}
+
+/* Toggle Visibility Mechanics */
+.poster-layout {
+    display: none;
+    min-height: 80vh;
+    border: 1px solid var(--wireframe-gray);
+    background: #0d0d0d;
+    padding: 30px;
+}
+
+.poster-layout.active-poster {
+    display: block;
+}
+
+/* --- POSTER SPECIFIC GRID TRANSLATIONS --- */
+
+/* Poster 1: Core Warp (Split Grid Layout) */
+.poster-grid-p1 {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 75vh;
+}
+.p1-header {
+    font-family: var(--sigil-font);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--neon-orange);
+    border-bottom: 1px dashed var(--wireframe-gray);
+}
+.p1-warp-zone {
+    border: 1px solid var(--wireframe-gray);
+    margin: 20px 0;
+    background: radial-gradient(circle, #1a1a1a 10%, transparent 11%);
+    background-size: 15px 15px;
+    position: relative;
+}
+
+/* Poster 2: Digital Scape (Asymmetric Left Sidebar Grid) */
+.poster-grid-p2 {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    height: 75vh;
+}
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-family: var(--sigil-font);
+    color: var(--cyber-white);
+    letter-spacing: 6px;
+}
+.p2-center-sphere {
+    border: 1px solid var(--wireframe-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wireframe-sphere {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed var(--neon-orange);
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+}
+
+/* Poster 3: Future Fusion (Heavy Headline Style) */
+.poster-grid-p3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75vh;
+}
+.p3-massive-title {
+    font-family: var(--sigil-font);
+    font-size: 5rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--neon-orange);
+    line-height: 0.9;
+}
+
+/* Poster 4: Flash Back (Geometric Perspective Box) */
+.poster-grid-p4 {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 75vh;
+}
+.p4-perspective-grid {
+    border: 1px solid var(--neon-orange);
+    background: linear-gradient(45deg, #111 25%, transparent 25%), linear-gradient(-45deg, #111 25%, transparent 25%);
+    background-size: 30px 30px;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
