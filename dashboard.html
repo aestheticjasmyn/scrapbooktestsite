@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>// ARCHIVE_CORE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+    <div class="grid-overlay"></div>
+
+    <nav class="archive-nav">
+        <button class="nav-link active" onclick="switchPage('poster1')">01_CORE_WARP</button>
+        <button class="nav-link" onclick="switchPage('poster2')">02_DIGITAL_SCAPE</button>
+        <button class="nav-link" onclick="switchPage('poster3')">03_FUTURE_FUSION</button>
+        <button class="nav-link" onclick="switchPage('poster4')">04_FLASH_BACK</button>
+    </nav>
+
+    <main class="poster-viewport">
+        
+        <section id="poster1" class="poster-layout active-poster">
+            <div class="poster-grid-p1">
+                <header class="p1-header">Y2K <span>VIBES</span></header>
+                <div class="p1-warp-zone">
+                    <div class="warped-net"></div>
+                </div>
+                <div class="p1-footer-text">
+                    <p>FUTURE_FLASHBACK // CORE SELECTION</p>
+                    <h3>SPINNING VINYL HUB</h3>
+                    <div class="vinyl-player-container">
+                        <div class="vinyl-record"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="poster2" class="poster-layout">
+            <div class="poster-grid-p2">
+                <div class="p2-sidebar">
+                    <h2 class="vertical-text">DIGITAL DREAMSCAPE</h2>
+                </div>
+                <div class="p2-center-sphere">
+                    <div class="wireframe-sphere"></div>
+                </div>
+                <div class="p2-content-box">
+                    <h3>TRINKET & TOY BOX</h3>
+                    <p>Interactive shelf system down below.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="poster3" class="poster-layout">
+            <div class="poster-grid-p3">
+                <div class="p3-top-tag">FUTURE FUSION // ✦</div>
+                <div class="p3-massive-title">Y2K POSTER</div>
+                <div class="p3-interactive-zone">
+                    <h3>KITCHEN & PANTRY TRINKETS</h3>
+                    <p>Drag items, interactive fridge mechanics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="poster4" class="poster-layout">
+            <div class="poster-grid-p4">
+                <div class="p4-header-text">FUTURE FLASH-BACK</div>
+                <div class="p4-perspective-grid">
+                    <div class="floating-orb"></div>
+                </div>
+                <div class="p4-details">
+                    <h3>GALLERY // FILM STRIPS</h3>
+                    <p>Auto-updating Google Photos container layout.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
