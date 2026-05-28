@@ -1,0 +1,276 @@
+/* --- CYBER-Y2K & CYBERSIGILISM CORE STYLES --- */
+:root {
+    --bg-dark: #0a0a0c;
+    --chrome-silver: linear-gradient(135deg, #e6e6e6 0%, #999999 25%, #ffffff 50%, #555555 75%, #cccccc 100%);
+    --neon-glow: #00f3ff;
+    --neon-pink: #ff0077;
+    --border-glow: 1px solid rgba(0, 243, 255, 0.3);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    overflow-x: hidden;
+    background-image: radial-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+/* --- SECURE GATE OVERLAY --- */
+.overlay-gate {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.gate-content {
+    text-align: center;
+    background: #111116;
+    padding: 40px;
+    border: 2px solid #ff0055;
+    box-shadow: 0 0 20px #ff0055;
+    border-radius: 8px;
+}
+
+.sigil-text {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    color: #ff0055;
+    text-shadow: 0 0 10px #ff0055, 2px 2px #000;
+    margin-bottom: 5px;
+}
+
+.glowing-sub {
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.input-wrapper input {
+    background: #000;
+    border: 1px solid #ff0055;
+    color: #ff0055;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    outline: none;
+}
+
+.input-wrapper button {
+    background: #ff0055;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error-msg { color: red; font-size: 0.9rem; margin-top: 10px; }
+.hidden { display: none !important; }
+
+/* --- NAVIGATION ARCHITECTURE --- */
+.cyber-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, #111115 0%, #050507 100%);
+    padding: 15px 30px;
+    border-bottom: var(--border-glow);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.logo {
+    font-weight: bold;
+    background: var(--chrome-silver);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+}
+
+.nav-tabs .tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #888;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: all 0.3s;
+}
+
+.nav-tabs .tab-btn.active, .nav-tabs .tab-btn:hover {
+    color: var(--neon-glow);
+    border: 1px solid var(--neon-glow);
+    box-shadow: 0 0 8px var(--neon-glow);
+    background: rgba(0, 243, 255, 0.05);
+}
+
+/* --- CARDS & PANELS --- */
+.cyber-card {
+    background: rgba(15, 15, 25, 0.8);
+    border: var(--border-glow);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background: var(--chrome-silver);
+    color: #000;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- THE VINYL ENGINE --- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 30px;
+}
+
+.vinyl-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.vinyl-disk {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #222 20%, #050505 60%, #000 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.vinyl-disk.spinning {
+    animation: spin 3s linear infinite;
+}
+
+.vinyl-label {
+    position: absolute;
+    top: 35%; left: 35%; width: 30%; height: 30%;
+    background: var(--neon-pink);
+    border-radius: 50%;
+    border: 2px dashed #000;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.audio-controls {
+    padding: 15px;
+    text-align: center;
+}
+
+.audio-controls select {
+    background: #000; color: #fff; border: var(--border-glow);
+    padding: 8px; width: 90%; margin-bottom: 10px;
+}
+
+/* --- YEAR AESTHETIC BADGES --- */
+.year-badges .badge {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 5px;
+    border-radius: 12px;
+    background: #000;
+    border: 2px solid var(--fav-color);
+    color: var(--fav-color);
+    box-shadow: 0 0 5px var(--fav-color);
+}
+
+/* --- BLU-RAY THEATER SHELF --- */
+.bluray-theater {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.bluray-shelf {
+    display: flex;
+    gap: 15px;
+    background: linear-gradient(90deg, #111, #222, #111);
+    padding: 20px;
+    border-bottom: 4px solid #444;
+}
+
+.bluray-case {
+    width: 45px;
+    height: 160px;
+    background: #0044ff; /* Classic Blu-ray case blue */
+    border: 1px solid #0022aa;
+    border-radius: 2px 5px 5px 2px;
+    cursor: pointer;
+    position: relative;
+    transform: rotate(-3deg);
+    transition: transform 0.2s;
+}
+
+.bluray-case:hover {
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 0 0 15px #0044ff;
+}
+
+.case-spine {
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.case-face { display: none; } /* Show when loaded or dragged */
+
+.deck-display {
+    background: #000;
+    color: var(--neon-glow);
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px inset #222;
+}
+
+/* --- PANTRY & GAMES INTERFACES --- */
+.pantry-grid, .arcade-grid {
+    display: flex;
+    gap: 20px; padding: 20px;
+}
+
+.pantry-item, .desktop-icon {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pantry-item:hover, .desktop-icon:hover {
+    border-color: var(--neon-glow);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.item-icon, .icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.embed-link {
+    display: block; font-size: 0.7rem; color: var(--neon-pink); margin-top: 5px;
+}
+
+/* --- GLOBAL TAB ACTIONS --- */
+.tab-content { display: none; }
+.active-content { display: block !important; }
