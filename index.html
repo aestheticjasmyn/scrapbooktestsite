@@ -3,150 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Jasmyn's Time Capsule </title>
-    <link rel="stylesheet" href="style.css">
+    <title>⚡ ENTER SYSTEM ⚡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #050505;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+        .cyber-sigil {
+            filter: drop-shadow(0 0 8px rgba(0, 255, 242, 0.6)) drop-shadow(0 0 15px rgba(234, 0, 255, 0.4));
+        }
+        .chrome-text {
+            background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 45%, #262626 50%, #737373 55%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+        }
+    </style>
 </head>
-<body>
+<body class="flex flex-col items-center justify-center h-screen text-white">
 
-    <div id="crypto-gate" class="overlay-gate">
-        <div class="gate-content">
-            <h1 class="sigil-text">ACCESS_DENIED</h1>
-            <p class="glowing-sub">ENTER DECRYPTION KEY TO UNLOCK THE ARCHIVE</p>
-            <div class="input-wrapper">
-                <input type="password" id="gate-pass" placeholder="••••••••" autocomplete="off">
-                <button onclick="unlockArchive()">ENTER</button>
-            </div>
-            <p id="gate-error" class="error-msg"></p>
-        </div>
+    <div class="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+        <svg class="cyber-sigil w-96 h-96" viewBox="0 0 100 100" stroke="cyan" stroke-width="1" fill="none">
+            <path d="M50,5 L45,40 L10,25 L40,48 L5,50 L40,52 L10,75 L45,60 L5,95 L50,65 L55,60 L90,75 L60,52 L95,50 L60,48 L90,25 L55,40 Z M50,25 L50,75 M25,50 L75,50" />
+            <circle cx="50" cy="50" r="10" stroke="magenta" />
+        </svg>
     </div>
 
-    <div id="main-archive" class="hidden">
+    <div class="z-10 bg-neutral-900/80 border border-neutral-700 p-8 rounded-lg shadow-2xl text-center max-w-sm w-full mx-4 backdrop-blur-md">
+        <h1 class="text-3xl font-black tracking-widest uppercase mb-6 chrome-text">ACCESS REQUIRED</h1>
         
-        <header class="cyber-nav">
-            <div class="logo">✦ JASMYN // ARCHIVE ✦</div>
-            <nav class="nav-tabs">
-                <button class="tab-btn active" onclick="switchTab('desktop')">CORE</button>
-                <button class="tab-btn" onclick="switchTab('gallery')">FILM & VIDEO</button>
-                <button class="tab-btn" onclick="switchTab('kitchen')">THE PANTRY</button>
-                <button class="tab-btn" onclick="switchTab('games')">DESKTOP ARCADE</button>
-            </nav>
-        </header>
-
-        <main class="stage">
-
-            <section id="tab-desktop" class="tab-content active-content">
-                <div class="grid-layout">
-                    <div class="cyber-card trinket-box">
-                        <div class="card-header">🔊 AUDIO_CORE.EXE</div>
-                        <div class="vinyl-container">
-                            <div class="vinyl-arm"></div>
-                            <div id="vinyl-disk" class="vinyl-disk">
-                                <div class="vinyl-label"></div>
-                            </div>
-                        </div>
-                        <div class="audio-controls">
-                            <select id="track-select" onchange="changeTrack()">
-                                <option value="">-- SELECT MP3 REEL --</option>
-                                <option value="https://docs.google.com/uc?export=download&id=YOUR_DRIVE_FILE_ID_1">FAV TRACK 01</option>
-                                <option value="https://docs.google.com/uc?export=download&id=YOUR_DRIVE_FILE_ID_2">FAV TRACK 02</option>
-                            </select>
-                            <audio id="audio-player" controls></audio>
-                        </div>
-                    </div>
-
-                    <div class="cyber-card welcome-box">
-                        <div class="card-header">✦ CHRONO_LOG</div>
-                        <h2>SYSTEM STATUS: ACTIVE</h2>
-                        <p>Welcome to the digital capsule. Scrapbooked collections organized by timeline aesthetics, cyber-sigil interfaces, and interactive trinkets.</p>
-                        <div class="year-badges">
-                            <span class="badge" style="--fav-color: #ff0055;">2010</span>
-                            <span class="badge" style="--fav-color: #00ffcc;">2012</span>
-                            <span class="badge" style="--fav-color: #7a00ff;">2015</span>
-                            <span class="badge" style="--fav-color: #ffcc00;">2024</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="tab-gallery" class="tab-content">
-                <div class="bluray-theater">
-                    <div class="shelf-container">
-                        <h3>SELECT A YEAR TO LOAD BLU-RAY</h3>
-                        <div class="bluray-shelf">
-                            <div class="bluray-case" onclick="loadBluray('2012', 'Jasmyn\'s 2012', ['Christmas Morning - 01:24', 'Dancing in the Living Room - 02:45', 'School Talent Show - 05:12'])">
-                                <div class="case-spine">2012</div>
-                                <div class="case-face">JASMYN'S 2012</div>
-                            </div>
-                            <div class="bluray-case" onclick="loadBluray('2015', 'Jasmyn\'s 2015', ['Singing Competition - 03:10', 'Summer Camp Bonfire - 08:22'])">
-                                <div class="case-spine">2015</div>
-                                <div class="case-face">JASMYN'S 2015</div>
-                            </div>
-                            <div class="bluray-case" onclick="loadBluray('2024', 'Baby Shower', ['Gift Opening - 15:40', 'Family Speech - 04:12', 'The Decorations - 02:00'])">
-                                <div class="case-spine">BABY SHOWER</div>
-                                <div class="case-face">MY BABY SHOWER</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="player-deck-container">
-                        <div class="cyber-card deck-card">
-                            <div class="card-header">💿 BLU-RAY PLAYER DECK</div>
-                            <div id="deck-display" class="deck-display">NO DISC INSERTED</div>
-                            
-                            <div class="episode-list-wrapper">
-                                <h4>EPISODE LIST / DESCRIPTIONS</h4>
-                                <ul id="episode-list">
-                                    <li class="empty-msg">Insert a physical disc from the shelf to read timeline logs.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="tab-kitchen" class="tab-content">
-                <div class="cyber-card">
-                    <div class="card-header">🥤 THE PANTRY // NOSTALGIA FOODS</div>
-                    <p class="hint">Click items to interact or test effects.</p>
-                    <div class="pantry-grid">
-                        <div class="pantry-item" id="gummy-bag" onclick="useTweezers()">
-                            <span class="item-icon">🐛</span>
-                            <p>Lightning Bug Gummies</p>
-                            <small>(Click to use Light-up Tweezers)</small>
-                        </div>
-                        <div class="pantry-item" onclick="eatItem(this)">
-                            <span class="item-icon">🧃</span>
-                            <p>Retro Drink Box</p>
-                            <small>(Click to bite/drink)</small>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="tab-games" class="tab-content">
-                <div class="cyber-card">
-                    <div class="card-header">💻 OLD DESKTOP EMULATION</div>
-                    <div class="arcade-grid">
-                        <div class="desktop-icon" onclick="alert('User: aestheticjxsmyn\nStatus: Classic Era Account Saved')">
-                            <div class="icon-box">🐧</div>
-                            <p>Club Penguin</p>
-                        </div>
-                        <div class="desktop-icon" onclick="alert('Moshi Monsters Identity Vault Loaded!')">
-                            <div class="icon-box">👾</div>
-                            <p>Moshi Monsters</p>
-                        </div>
-                        <div class="desktop-icon">
-                            <div class="icon-box">⚡</div>
-                            <p>Prankster Planet</p>
-                            <a href="https://www.youtube.com/results?search_query=Prankster+Planet+Walkthrough" target="_blank" class="embed-link">Watch Walkthrough</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
+        <input type="password" id="gatekeeper" placeholder="ENTER KEYWAY..." 
+               class="w-full bg-black border border-neutral-600 text-center py-2 text-cyan-400 tracking-widest focus:outline-none focus:border-magenta-500 rounded font-mono mb-4 placeholder-neutral-600">
+        
+        <button onclick="verifyAccess()" 
+                class="w-full bg-gradient-to-r from-cyan-900 to-purple-900 hover:from-cyan-700 hover:to-purple-700 border border-cyan-400 text-cyan-200 py-2 rounded uppercase font-bold tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+            Decrypt System
+        </button>
+        <p id="error-log" class="text-red-500 text-xs mt-3 hidden tracking-wide animate-pulse">!! ACCESS DENIED: INVALID SIGNATURE !!</p>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        function verifyAccess() {
+            const input = document.getElementById('gatekeeper').value;
+            // Simple front-end pass check (Change 'stew' to your preferred password)
+            if(input === 'stew') {
+                localStorage.setItem('cyber_vault_auth', 'granted');
+                window.location.href = 'desktop.html';
+            } else {
+                const err = document.getElementById('error-log');
+                err.classList.remove('hidden');
+                document.getElementById('gatekeeper').value = '';
+            }
+        }
+    </script>
 </body>
 </html>
