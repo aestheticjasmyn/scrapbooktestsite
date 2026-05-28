@@ -160,7 +160,7 @@ body {
 .vinyl-label {
     position: absolute;
     top: 35%; left: 35%; width: 30%; height: 30%;
-    background: var(--neon-pink);
+    background: var(--olive-green);
     border-radius: 50%;
     border: 2px dashed #000;
 }
